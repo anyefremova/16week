@@ -5,7 +5,7 @@
 const paragraph = document.getElementById('practicum');
 
 function makeOne() {
-	//Ваш код
+	paragraph.innerText = document.forms.length;
 }
 
 document.querySelector('.b-1').onclick = makeOne;
@@ -17,7 +17,7 @@ document.querySelector('.b-1').onclick = makeOne;
 const paragraphTwo = document.getElementById('practicum2');
 
 function makeTwo() {
-	//Ваш код
+	paragraphTwo.innerText = document.forms.formOne.getAttribute('name');
 }
 
 document.querySelector('.b-2').onclick = makeTwo;
@@ -29,7 +29,7 @@ document.querySelector('.b-2').onclick = makeTwo;
 const paragraphThree = document.getElementById('practicum3');
 
 function makeThree() {
-	//Ваш код
+	paragraphThree.innerText = document.forms.lastForm.getAttribute('name');
 }
 
 document.querySelector('.b-3').onclick = makeThree;
@@ -49,7 +49,15 @@ document.querySelector('.b-3').onclick = makeThree;
 const paragraphFour = document.getElementById('practicum4');
 
 function makeFour() {
-	//Ваш код
+	const forms = document.forms;
+	const formNames = [];
+	for (i = 0; i < forms.length; i += 1) {
+		const formsTask4 = forms[i];
+		formNames2 = formsTask4.getAttribute('name');
+		formNames.push(formNames2);
+	}
+	const strFormNames = formNames.join(', ');
+	paragraphFour.innerText = strFormNames;
 }
 
 document.querySelector('.b-4').onclick = makeFour;
@@ -62,7 +70,9 @@ document.querySelector('.b-4').onclick = makeFour;
 const paragraphFive = document.getElementById('practicum5');
 
 function makeFive() {
-	//Ваш код
+	const form3 = document.forms.formThree;
+	const elementsForm3 = form3.elements.length;
+	paragraphFive.innerText = elementsForm3;
 }
 
 document.querySelector('.b-5').onclick = makeFive;
@@ -74,7 +84,9 @@ document.querySelector('.b-5').onclick = makeFive;
 const paragraphSix = document.getElementById('practicum6');
 
 function makeSix() {
-	//Ваш код
+	const form2 = document.forms.formTwo;
+	const elementsForm2 = form2.elements.length;
+	paragraphSix.innerText = elementsForm2;
 }
 
 document.querySelector('.b-6').onclick = makeSix;
@@ -93,7 +105,9 @@ document.querySelector('.b-6').onclick = makeSix;
 const paragraphSeven = document.getElementById('practicum7');
 
 function makeSeven() {
-	//Ваш код
+	const forms = document.forms;
+	const formTwo = forms[1];
+	const formTwoElements = formTwo.elements;
 }
 
 document.querySelector('.b-7').onclick = makeSeven;
