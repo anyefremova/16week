@@ -108,7 +108,14 @@ function makeSeven() {
 	const forms = document.forms;
 	const formTwo = forms[1];
 	const formTwoElements = formTwo.elements;
+	let elementsList = "";
+	for (let i = 0; i < formTwoElements.length; i += 1) {
+		const element = formTwoElements[i];
+		elementsList += `- ${element.name}\n`;
+	}
+	paragraphSeven.textContent = elementsList;
 }
+
 
 document.querySelector('.b-7').onclick = makeSeven;
 
@@ -118,7 +125,14 @@ document.querySelector('.b-7').onclick = makeSeven;
 const paragraphEight = document.getElementById('practicum8');
 
 function makeEight() {
-	//Ваш код
+	const formOne = document.forms.formOne;
+	const formOneElements = formOne.elements;
+	let formOneElementsList = "";
+	for (let i = 0; i < formOneElements.length; i += 1) {
+		const element = formOneElements[i];
+		formOneElementsList += `- ${element.name}\n`;
+	}
+	paragraphEight.textContent = formOneElementsList;
 }
 
 document.querySelector('.b-8').onclick = makeEight;
@@ -129,7 +143,14 @@ document.querySelector('.b-8').onclick = makeEight;
 const paragraphNine = document.getElementById('practicum9');
 
 function makeNine() {
-	//Ваш код
+	const formThree = document.forms.formThree;
+	const formThreeElements = formThree.elements;
+	let formThreeElementsList = "";
+	for (let i = 0; i < formThreeElements.length; i += 1) {
+		const element = formThreeElements[i];
+		formThreeElementsList += `- ${element.name}\n`;
+	}
+	paragraphNine.textContent = formThreeElementsList;
 }
 
 document.querySelector('.b-9').onclick = makeNine;
@@ -141,7 +162,10 @@ document.querySelector('.b-9').onclick = makeNine;
 const paragraphTen = document.getElementById('practicum10');
 
 function makeTen() {
-	//Ваш код
+	const formFour = document.forms.lastForm;
+	const formFourElements = formFour.elements;
+	const radioFormFour = formFourElements.fourthName;
+	paragraphTen.textContent = radioFormFour.value;
 }
 
 document.querySelector('.b-10').onclick = makeTen;
