@@ -183,7 +183,15 @@ document.querySelector('.b-10').onclick = makeTen;
 const paragraphEleven = document.getElementById('practicum11');
 
 function makeEleven() {
-	//Ваш код
+	const formOne = document.forms.formOne;
+	const formOneElements = formOne.elements;
+	const formOneSelect = formOneElements.firstSelect;
+	let optionsValues = "";
+	for (let i = 0; i < formOneSelect.options.length; i += 1) {
+		let option = formOneSelect.options[i];
+		optionsValues += `${option.value}\n`;
+	}
+	paragraphEleven.textContent = optionsValues;
 }
 
 document.querySelector('.b-11').onclick = makeEleven;
@@ -198,7 +206,11 @@ document.querySelector('.b-11').onclick = makeEleven;
 const paragraphTwelve = document.getElementById('practicum12');
 
 function makeTwelve() {
-	//Ваш код
+	const formTwo = document.forms.formTwo;
+	const checkbox1 = formTwo.elements.checkboxOne.id;
+	const checkbox2 = formTwo.elements.checkboxTwo.id;
+	const checkbox3 = formTwo.elements.checkboxThree.id;
+	paragraphTwelve.textContent = `${checkbox1}, ${checkbox2}, ${checkbox3}`;
 }
 
 document.querySelector('.b-12').onclick = makeTwelve;
@@ -215,7 +227,14 @@ document.querySelector('.b-12').onclick = makeTwelve;
 const paragraphThirteen = document.getElementById('practicum13');
 
 function checkButton(e) {
-	//Ваш код
+	const formFour = document.forms.lastForm;
+	const radio = formFour.elements.fourthName;
+	if (radio.checked) {
+		paragraphThirteen.textContent = "Кнопка выбрана";
+	}
+	else {
+		paragraphThirteen.textContent = "Кнопка не выбрана";
+	}
 }
 
 document.querySelector('.b-13').addEventListener('click', checkButton);
@@ -235,7 +254,20 @@ document.querySelector('.b-13').addEventListener('click', checkButton);
 const paragraphFourteen = document.getElementById('practicum14');
 
 function checkOption() {
-	//Ваш код
+	const formOne = document.forms.formOne;
+	const elements = formOne.elements;
+	const select = elements.firstSelect;
+	select.selectedIndex = 1;
+
+	if (select.value == "Опция 1") {
+		paragraphFourteen.textContent = "Выбран первый вариант";
+	}
+	else if (select.value == "Опция 2") {
+		paragraphFourteen.textContent = "Выбран второй вариант";
+	}
+	else if (select.value == "Опция 3") {
+		paragraphFourteen.textContent = "Выбран третий вариант";
+	}
 }
 
 document.querySelector('.b-14').onclick = checkOption;
