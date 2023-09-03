@@ -1,4 +1,3 @@
-/*
 //Задание 1
 //Найдите все формы на странице. При нажатии на кнопку выведите количество найденных форм.
 //Подсказка: используйте коллекцию document.forms и свойство length
@@ -428,7 +427,7 @@ document.querySelector('.b-22').onclick = function (event) {
 		document.getElementById('result22').textContent = 'Проверка пройдена';
 	}
 };
-*/
+
 //Задание 23
 //При выборе опции "Я хочу зарегистрироваться" в четвёртой форме кнопка должна быть разблокирована. В противном случае, сделайте кнопку отправки формы заблокированной.
 //Подсказка: используйте свойство disabled
@@ -461,11 +460,11 @@ document.querySelector('.b-25').onclick = function () {
 
 	inputs.forEach(function (input) {
 		input.addEventListener('focus', function () {
-			//Ваш код
+			input.style.borderColor = "#00ff00";
 		});
 
 		input.addEventListener('blur', function () {
-			//Ваш код
+			input.style.borderColor = "";
 		});
 	});
 };
@@ -475,7 +474,9 @@ document.querySelector('.b-25').onclick = function () {
 
 document.querySelector('.b-26').onclick = function (event) {
 	event.preventDefault();
-	//Ваш код
+	const name = document.forms.formThree.elements.thirdName;
+	const result26 = document.getElementById('result26');
+	result26.textContent = name.placeholder;
 };
 
 //Задание 27
@@ -485,7 +486,8 @@ const formTwoInputs = document.querySelectorAll('.secondForm input');
 
 formTwoInputs.forEach(function (input) {
 	input.addEventListener('input', function () {
-		//Ваш код
+		const result27 = document.getElementById('result27');
+		result27.textContent = "Изменение внесено";
 	});
 });
 
@@ -495,21 +497,23 @@ formTwoInputs.forEach(function (input) {
 const selectFormThree = document.getElementById('firstSelect');
 
 selectFormThree.addEventListener('change', function () {
-	//Ваш код
+	const result28 = document.getElementById('result28');
+	result28.textContent = "Опция выбрана";
 });
 
 //Задание 29
 //При заполнении всех полей третьей формы выведите их значения в консоль. Используйте JavaScript без использования объекта FormData.
 
 const formThree = document.forms.formThree;
-const nameInputThree = form.elements.thirdName;
-const emailInputThree = form.elements.thirdEmail;
+const nameInputThree = formThree.elements.thirdName;
+const emailInputThree = formThree.elements.thirdEmail;
 
 function handleSubmitTwentyNine(event) {
 	event.preventDefault();
 
 	if (nameInputThree.value && emailInputThree.value) {
-		//Ваш код
+		console.log(nameInputThree.value);
+		console.log(emailInputThree.value);
 	} else {
 		console.log('Пожалуйста, заполните все поля формы.');
 	}
@@ -531,5 +535,5 @@ function handleSubmit(event) {
 	const checkboxes = formTwo.querySelectorAll('input[type="checkbox"]:checked');
 	const selectedOptions = Array.from(checkboxes).map((checkbox) => checkbox.labels[0].textContent);
 
-	//Ваш код
+	console.log(selectedOptions);
 }
