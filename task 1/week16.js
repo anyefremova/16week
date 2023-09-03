@@ -1,3 +1,4 @@
+/*
 //Задание 1
 //Найдите все формы на странице. При нажатии на кнопку выведите количество найденных форм.
 //Подсказка: используйте коллекцию document.forms и свойство length
@@ -317,9 +318,19 @@ makeSixteen();
 const formOne = document.forms.formOne;
 
 formOne.addEventListener('submit', function (event) {
-	event.preventDefault(); //Отмена отправки
+	event.preventDefault();
+	const element1 = formOne.elements.firstName.value;
+	const element2 = formOne.elements.firstEmail.value
+	const element3 = formOne.elements.firstSelect.value
 
-	//Ваш код
+	if (element1 === "" || element2 === "" || element3 === "") {
+		const errorMessage = document.getElementById('errorMessage');
+		errorMessage.textContent = "Необходимо заполнить все поля";
+	}
+
+	else {
+		formOne.submit();
+	}
 });
 
 //Задание 18
@@ -329,10 +340,11 @@ formOne.addEventListener('submit', function (event) {
 //- Используйте метод reset() формы, чтобы очистить все её поля после отправки
 //- Добавьте слушатель события addEventListener на первую форму, как вы делали в задании 17
 //- В обработчике события вызовите метод event.preventDefault() для отмены отправки формы в случае ошибки
+const formOne = document.forms.formOne;
 
 formOne.addEventListener('submit', function (event) {
-	event.preventDefault(); //Отмена отправки
-	//Ваш код
+	event.preventDefault();
+	formOne.reset();
 });
 
 //Задание 19
@@ -343,11 +355,20 @@ formOne.addEventListener('submit', function (event) {
 //- В обработчике события, используя условные операторы (if), проверьте выбранную опцию
 //- В зависимости от выбранной опции, измените цвет фона страницы, используя свойство document.body.style.backgroundColor
 
-//const selectElement = //Ваш код
+const selectElement = document.getElementById('firstSelect');
 
-// selectElement.onchange = function () {
-// 	//Ваш код
-// };
+selectElement.onchange = function () {
+	if (selectElement.selectedIndex === 0) {
+		document.body.style.backgroundColor = 'green';
+	}
+	else if (selectElement.selectedIndex === 1) {
+		document.body.style.backgroundColor = 'blue';
+	}
+	else if (selectElement.selectedIndex === 2) {
+		document.body.style.backgroundColor = 'yellow';
+	}
+};
+
 
 //Задание 20
 //Добавьте валидацию для поля Email
@@ -358,11 +379,19 @@ formOne.addEventListener('submit', function (event) {
 //- В обработчике события, используя регулярное выражение (RegExp), проверьте введенное значение поля Email
 //- В зависимости от результата проверки, измените стиль поля Email (например, установите класс с ошибкой) и отобразите сообщение об ошибке в элементе <p> (добавьте элемент самостоятельно) с помощью свойства textContent.
 
-//const emailInput = //Ваш код
+const formOne = document.forms.formOne;
+const emailInput = formOne.elements.firstEmail;
 const errorMessage = document.getElementById('errorMessage');
 
 emailInput.oninput = function () {
-	//Ваш код
+	const email = emailInput.value;
+	const emailRegExp = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i;
+
+	if (emailRegExp.test(email)) {
+		errorMessage.textContent = '';
+	} else {
+		errorMessage.textContent = "Веедите корректный email";
+	}
 };
 
 //Задание 21
@@ -379,7 +408,8 @@ document.querySelector('.b-21').onclick = function (event) {
 	});
 
 	if (!isChecked) {
-		//Ваш код
+		event.preventDefault();
+		document.getElementById('result21').textContent = 'Выберите хотя бы один вариант';
 	} else {
 		document.getElementById('result21').textContent = 'Проверка пройдена';
 	}
@@ -392,22 +422,35 @@ document.querySelector('.b-22').onclick = function (event) {
 	const nameInput = document.forms.formThree.elements.thirdName;
 
 	if (nameInput.value.trim() === '') {
-		//Ваш код
+		event.preventDefault();
+		document.getElementById('result22').textContent = 'Введите ваше имя';
 	} else {
 		document.getElementById('result22').textContent = 'Проверка пройдена';
 	}
 };
-
+*/
 //Задание 23
 //При выборе опции "Я хочу зарегистрироваться" в четвёртой форме кнопка должна быть разблокирована. В противном случае, сделайте кнопку отправки формы заблокированной.
 //Подсказка: используйте свойство disabled
+const formFourth = document.forms.lastForm;
+const register = formFourth.elements.fourthName;
+const button = document.querySelector('.b-13');
+if (register.checked) {
+	button.removeAttribute('disabled');
+} else {
+	button.setAttribute('disabled', 'disabled')
+}
 
 //Задание 24
 //Найдите все поля ввода на странице и установите им атрибут "placeholder" со значением "Введите данные"
 //Подсказка: для установки атрибута используйте методы forEach и setAttribute
 
 document.querySelector('.b-24').onclick = function () {
-	//Ваш код
+	const inputs = document.querySelectorAll('input');
+
+	inputs.forEach(function (input) {
+		input.setAttribute('placeholder', 'Введите данные');
+	})
 };
 
 //Задание 25
