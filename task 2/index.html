@@ -27,14 +27,15 @@
             </div>
             <div class="form__section">
                 <label for="gender" class="form__label">Пол:</label>
-                <input type="radio" id="gender__male" name="gender" value="мужчина">
+                <input type="radio" id="gender__male" name="gender" value="мужчина" class="form__input">
                 <label for="gender__male">Мужчина</label>
-                <input type="radio" name="gender" id="gender__female" value="женщина">
+                <input type="radio" id="gender__female" name="gender" value="женщина" class="form__input">
                 <label for="gender__female">Женщина</label>
             </div>
             <div class="form__section">
                 <label for="profession" class="form__label">Профессия:</label>
-                <select class="form__profession" name="profession" placeholder="Выберите профессию" required>
+                <select class="form__profession" name="profession" id="profession" placeholder="Выберите профессию"
+                    required>
                     <option value="Врач">Врач</option>
                     <option value="Программист">Программист</option>
                     <option value="Учитель">Учитель</option>
@@ -46,13 +47,14 @@
             </div>
             <div class="form__section">
                 <label for="password" class="form__label">Пароль:</label>
-                <input type="password" id="password" name="password" placeholder="Введите пароль" minlength="8" required
+                <input type="password" id="password" name="password" class="form__input" placeholder="Введите пароль"
+                    minlength="8" required
                     pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()])[A-Za-z\d!@#$%^&*()]{8,20}$/">
             </div>
             <div class="form__section">
                 <label for="password__repeat" class="form__label">Пароль:</label>
-                <input type="password" id="password__repeat" name="password__repeat" placeholder="Повторите пароль"
-                    minlength="8" required
+                <input type="password" id="password__repeat" name="password__repeat" class="form__input"
+                    placeholder="Повторите пароль" minlength="8" required
                     pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()])[A-Za-z\d!@#$%^&*()]{8,20}$/">
             </div>
             <div class="form__section">
