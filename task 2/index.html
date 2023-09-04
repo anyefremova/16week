@@ -4,11 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ФОрма</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <h1>Форма регистрации</h1>
+    <div class="form">
+        <h1>Форма регистрации</h1>
+        <form name="mainForm" class="mainForm">
+            <div class="form__section">
+                <label for="name" class="form__label">Имя:</label>
+                <input type="text" id="name" name="name" class="form__input" placeholder="Введите имя" minlength="2"
+                    maxlength="20" required />
+            </div>
+            <div class="form__section">
+                <label for="email" class="form__label">Email:</label>
+                <input type="email" id="email" name="email" class="form__input" placeholder="Введите email" required />
+            </div>
+            <div class="form__section">
+                <label for="age" class="form__label">Email:</label>
+                <input type="number" id="age" name="age" class="form__input" placeholder="Введите возраст" required />
+            </div>
+        </form>
+    </div>
+
+    <script src="index.js"></script>
 </body>
 
 </html>
