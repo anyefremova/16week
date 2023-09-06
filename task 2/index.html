@@ -16,14 +16,17 @@
                 <label for="name" class="form__label">Имя:</label>
                 <input type="text" id="name" name="name" class="form__input" placeholder="Введите имя" minlength="2"
                     maxlength="20" required />
+                <span class="error-message" id="name-error"></span>
             </div>
             <div class="form__section">
                 <label for="email" class="form__label">Email:</label>
                 <input type="email" id="email" name="email" class="form__input" placeholder="Введите email" required />
+                <span class="error-message" id="email-error"></span>
             </div>
             <div class="form__section">
                 <label for="age" class="form__label">Возраст:</label>
                 <input type="number" id="age" name="age" class="form__input" placeholder="Введите возраст" required />
+                <span class="error-message" id="age-error"></span>
             </div>
             <div class="form__section">
                 <label for="gender" class="form__label">Пол:</label>
@@ -31,6 +34,7 @@
                 <label for="gender__male">Мужчина</label>
                 <input type="radio" id="gender__female" name="gender" value="женщина" class="form__input">
                 <label for="gender__female">Женщина</label>
+                <span class="error-message" id="gender-error"></span>
             </div>
             <div class="form__section">
                 <label for="profession" class="form__label">Профессия:</label>
@@ -44,27 +48,32 @@
                     <option value="Продавец">Продавец</option>
                     <option value="Другое">Другое</option>
                 </select>
+                <span class="error-message" id="profession-error"></span>
             </div>
             <div class="form__section">
                 <label for="password" class="form__label">Пароль:</label>
                 <input type="password" id="password" name="password" class="form__input" placeholder="Введите пароль"
                     minlength="8" required
                     pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()])[A-Za-z\d!@#$%^&*()]{8,20}$/">
+                <span class="error-message" id="password-error"></span>
             </div>
             <div class="form__section">
                 <label for="password__repeat" class="form__label">Пароль:</label>
-                <input type="password" id="password__repeat" name="password__repeat" class="form__input"
+                <input type="password" id="passwordRepeat" name="password__repeat" class="form__input"
                     placeholder="Повторите пароль" minlength="8" required
                     pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()])[A-Za-z\d!@#$%^&*()]{8,20}$/">
+                <span class="error-message" id="passwordRepeat-error"></span>
             </div>
             <div class="form__section">
                 <label for="checkbox"></label>
                 <input type="checkbox" id="agreement" name="agreement">
                 <span>Я соглашаюсь с условиями обработки данных</span>
+                <span class="error-message" id="agreement-error"></span>
             </div>
             <div class="form__section">
-                <button type="submit" class="button__submit">Зарегистрироваться</button>
+                <button type="submit" class="button__submit" id="submit">Зарегистрироваться</button>
             </div>
+            <div class="errorsInfo"></div>
         </form>
     </div>
 
